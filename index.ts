@@ -1,7 +1,7 @@
 import { Resonate } from "@resonatehq/sdk";
 import type { Context } from "@resonatehq/sdk";
 
-const resonate = Resonate.local();
+const resonate = new Resonate();
 
 function* baz(_: Context, greetee: string): Generator<any, string, any> {
   console.log("running baz");
@@ -28,6 +28,7 @@ async function main() {
   try {
     const result = await fooR.run("greeting-workflow-1", "World");
     console.log(result);
+    resonate.stop();
   } catch (e) {
     console.log(e);
   }
