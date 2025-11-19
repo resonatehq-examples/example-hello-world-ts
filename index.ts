@@ -3,12 +3,12 @@ import type { Context } from "@resonatehq/sdk";
 
 const resonate = new Resonate();
 
-function* baz(_: Context, greetee: string): Generator<any, string, any> {
+async function baz(_: Context, greetee: string): string {
   console.log("running baz");
   return `Hello ${greetee} from baz!`;
 }
 
-function* bar(_: Context, greetee: string): Generator<any, string, any> {
+async function bar(_: Context, greetee: string): string {
   console.log("running bar");
   return `Hello ${greetee} from bar!`;
 }
@@ -26,7 +26,7 @@ const fooR = resonate.register("foo", foo);
 
 async function main() {
   try {
-    const result = await fooR.run("greeting-workflow-1", "World");
+    const result = await fooR.run("greeting-workflow", "World");
     console.log(result);
     resonate.stop();
   } catch (e) {
