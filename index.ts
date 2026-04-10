@@ -3,12 +3,12 @@ import type { Context } from "@resonatehq/sdk";
 
 const resonate = new Resonate();
 
-async function baz(_: Context, greetee: string): string {
+async function baz(_: Context, greetee: string): Promise<string> {
   console.log("running baz");
   return `Hello ${greetee} from baz!`;
 }
 
-async function bar(_: Context, greetee: string): string {
+async function bar(_: Context, greetee: string): Promise<string> {
   console.log("running bar");
   return `Hello ${greetee} from bar!`;
 }
