@@ -1,4 +1,10 @@
-![hello world banner](/assets/hello-world-banner.png)
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.png">
+    <img alt="Hello World — Resonate example" src="./assets/banner-dark.png">
+  </picture>
+</p>
 
 # Classic 'Hello World!'
 
